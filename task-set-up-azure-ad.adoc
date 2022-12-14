@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: task-set-up-azure-ad.html 
+keywords: azure netapp files, azure netapp files permissions, azure permissions, active directory, application, ad application, ad app, app, service principal 
+summary: BlueXP necesita permisos para configurar y administrar Azure NetApp Files. Puede conceder los permisos necesarios a una cuenta de Azure creando y configurando una aplicación de Azure Active Directory y obteniendo las credenciales de Azure que BlueXP necesita. 
+---
+= Configure una aplicación de Azure AD
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP necesita permisos para configurar y administrar Azure NetApp Files. Puede conceder los permisos necesarios a una cuenta de Azure creando y configurando una aplicación de Azure Active Directory (AD) y obteniendo las credenciales de Azure que BlueXP necesita.
+
+
+
+== Cree la aplicación AD
+
+Cree una aplicación de Azure AD y una entidad de servicio que BlueXP pueda usar para controlar el acceso basado en roles.
+
+.Antes de empezar
+Debe tener los permisos adecuados en Azure para crear una aplicación de Active Directory y asignar la aplicación a un rol. Para obtener más información, consulte https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentación de Microsoft Azure: Permisos necesarios"^].
+
+.Pasos
+. Desde el portal de Azure, abra el servicio *Azure Active Directory*.
++
+image:screenshot_azure_ad.gif["Captura de pantalla que muestra el servicio Active Directory en Microsoft Azure."]
+
+. En el menú, haga clic en *App registrs*.
+. Cree la aplicación:
++
+.. Haga clic en *Nuevo registro*.
+.. Especificar detalles acerca de la aplicación:
++
+*** *Nombre*: Introduzca un nombre para la aplicación.
+*** *Tipo de cuenta*: Seleccione un tipo de cuenta (cualquiera funcionará con BlueXP).
+*** *Redirigir URI*: Puede dejar este espacio en blanco.
+
+
+.. Haga clic en *Registrar*.
+
+
+. Copie el *ID de aplicación (cliente)* y el *ID de directorio (inquilino)*.
++
+image:screenshot_anf_app_ids.gif["Captura de pantalla que muestra el ID de la aplicación (cliente) y el ID del directorio (inquilino) de una aplicación en Azure Active Directory."]
+
++
+Al crear el entorno de trabajo de Azure NetApp Files en BlueXP, debe proporcionar el ID de aplicación (cliente) y el ID de directorio (inquilino) para la aplicación. BlueXP utiliza los identificadores para iniciar sesión mediante programación.
+
+. Cree un secreto de cliente para la aplicación con el fin de que BlueXP pueda utilizarla para la autenticación con Azure AD:
++
+.. Haga clic en *certificados y secretos > Nuevo secreto de cliente*.
+.. Proporcione una descripción del secreto y una duración.
+.. Haga clic en *Agregar*.
+.. Copie el valor del secreto de cliente.
++
+image:screenshot_anf_client_secret.gif["Una captura de pantalla del portal de Azure que muestra un secreto de cliente para el director de servicio de Azure AD."]
+
+
+
+
+
+.Resultado
+La aplicación AD está configurada y debe haber copiado el ID de la aplicación (cliente), el ID del directorio (arrendatario) y el valor del secreto del cliente. Necesita introducir esta información en BlueXP cuando agrega un entorno de trabajo de Azure NetApp Files.
+
+
+
+== Asigne la aplicación a una función
+
+Debe enlazar el principal del servicio con la suscripción a Azure y asignarle una función personalizada que tenga los permisos necesarios.
+
+.Pasos
+. https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles["Crear un rol personalizado en Azure"^].
++
+Los siguientes pasos describen cómo crear el rol desde el portal de Azure.
+
++
+.. Abra la suscripción y haga clic en *Control de acceso (IAM)*.
+.. Haga clic en *Agregar > Agregar rol personalizado*.
++
+image:screenshot_azure_access_control.gif["Captura de pantalla que muestra los pasos para añadir una función personalizada en el portal de Azure."]
+
+.. En la ficha *conceptos básicos*, escriba un nombre y una descripción para la función.
+.. Haga clic en *JSON* y haga clic en *Editar*, que aparece en la parte superior derecha del formato JSON.
+.. Agregue los siguientes permisos en _Actions_:
++
+[source, json]
+----
+"actions": [
+    "Microsoft.NetApp/*",
+    "Microsoft.Resources/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/write",
+    "Microsoft.Network/virtualNetworks/read",
+    "Microsoft.Insights/Metrics/Read"
+    ],
+----
+.. Haga clic en *Guardar*, haga clic en *Siguiente* y, a continuación, haga clic en *Crear*.
+
+
+. Ahora asigne la aplicación al rol que acaba de crear:
++
+.. En el portal de Azure, abra el servicio *Suscripciones*.
+.. Seleccione la suscripción.
+.. Haga clic en *Control de acceso (IAM) > Agregar > Agregar asignación de funciones*.
+.. En la ficha *rol*, seleccione la función personalizada que ha creado y haga clic en *Siguiente*.
+.. En la ficha *Miembros*, realice los siguientes pasos:
++
+*** Mantener seleccionado *Usuario, grupo o principal de servicio*.
+*** Haga clic en *Seleccionar miembros*.
++
+image:screenshot-azure-anf-role.png["Captura de pantalla del portal de Azure que muestra la ficha Miembros al agregar una función a una aplicación."]
+
+*** Busque el nombre de la aplicación.
++
+Veamos un ejemplo:
+
++
+image:screenshot_anf_app_role.png["Una captura de pantalla del portal de Azure que muestra el formulario de asignación de funciones Add en el portal de Azure."]
+
+*** Seleccione la aplicación y haga clic en *Seleccionar*.
+*** Haga clic en *Siguiente*.
+
+
+.. Haga clic en *revisar + asignar*.
++
+El principal de servicio de BlueXP ahora tiene los permisos de Azure necesarios para dicha suscripción.
+
+
+
+

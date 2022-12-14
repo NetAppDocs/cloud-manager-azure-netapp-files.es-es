@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-manage-volumes.html 
+keywords: azure netapp files, delete volumes, delete nfs volumes, netapp account, capacity pool, change service level 
+summary: Después de configurar el entorno de trabajo, puede gestionar cuentas de Azure NetApp Files, pools de capacidad, volúmenes y snapshots. 
+---
+= Gestione volúmenes para Azure NetApp Files
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede gestionar los volúmenes existentes a medida que cambien sus necesidades de almacenamiento. Es posible editar volúmenes, cambiar el nivel de servicio de un volumen, gestionar copias de Snapshot y eliminar volúmenes.
+
+
+
+== Edite el tamaño y las etiquetas de un volumen
+
+Después de crear un volumen, puede modificar su tamaño y sus etiquetas en cualquier momento.
+
+.Pasos
+. Abra el entorno de trabajo.
+. Pase el ratón sobre el volumen y seleccione *Editar*.
+. Modifique el tamaño y las etiquetas según sea necesario.
+. Haga clic en *aplicar*.
+
+
+
+
+== Cambie el nivel de servicio del volumen
+
+Después de crear un volumen, es posible cambiar el nivel de servicio en cualquier momento siempre que el pool de capacidad de destino ya exista.
+
+.Pasos
+. Abra el entorno de trabajo.
+. Pase el ratón sobre el volumen y seleccione *Cambiar nivel de servicio*.
+. Seleccione el pool de capacidad que ofrece el nivel de servicio que desea.
+. Haga clic en *Cambiar*.
+
+
+.Resultado
+El volumen se mueve al otro pool de capacidad sin afectar al volumen.
+
+
+
+== Gestione copias Snapshot
+
+Las copias Snapshot proporcionan una copia puntual de su volumen. Cree copias Snapshot, restaure los datos a un volumen nuevo y elimine copias Snapshot.
+
+.Pasos
+. Abra el entorno de trabajo.
+. Pase el ratón sobre el volumen y elija una de las opciones disponibles para gestionar las copias Snapshot:
++
+** *Crear una copia Snapshot*
+** *Revertir volumen a instantánea*
+** *Eliminar una copia snapshot*
+
+
+. Siga las indicaciones para completar la acción seleccionada.
+
+
+
+
+== Elimine volúmenes
+
+Elimine los volúmenes que ya no necesita.
+
+.Pasos
+. Abra el entorno de trabajo.
+. Pase el ratón sobre el volumen y haga clic en *Eliminar*.
+. Confirme que desea eliminar el volumen.
+

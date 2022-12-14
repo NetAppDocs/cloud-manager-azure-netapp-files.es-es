@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes' 
+summary: Descubra las novedades de la compatibilidad con Azure NetApp Files en BlueXP. 
+---
+= Lo nuevo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Descubra las novedades de Azure NetApp Files en BlueXP.
+
+
+
+== 11 de abril de 2021
+
+
+
+=== Compatibilidad con plantillas de volúmenes
+
+Un nuevo servicio de plantillas de aplicaciones le permite configurar una plantilla de volumen para Azure NetApp Files. La plantilla debería facilitar el trabajo porque ciertos parámetros de volumen ya se definirán en la plantilla, como el pool de capacidad, el tamaño, el protocolo, el vnet y la subred donde debería residir el volumen, entre otros. Cuando ya hay un parámetro predefinido, puede saltar al siguiente parámetro de volumen.
+
+* https://docs.netapp.com/us-en/cloud-manager-app-template/concept-resource-templates.html["Obtenga más información sobre las plantillas de aplicaciones y sobre cómo utilizarlas en su entorno"^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-volumes.html["Aprenda a crear un volumen de Azure NetApp Files a partir de una plantilla"]
+
+
+
+
+== 8 de marzo de 2021
+
+
+
+=== Cambie de forma dinámica los niveles de servicio
+
+Ahora puede cambiar de forma dinámica el nivel de servicio de un volumen para satisfacer las necesidades de la carga de trabajo y optimizar los costes. El volumen se mueve al otro pool de capacidad sin afectar al volumen.
+
+https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-volumes.html#change-the-volumes-service-level["Aprenda a cambiar el nivel de servicio de un volumen"].
+
+
+
+== 3 de agosto de 2020
+
+
+
+=== Configuración y gestión de Azure NetApp Files
+
+Configure y gestione Azure NetApp Files directamente desde Cloud Manager. Después de crear un entorno de trabajo de Azure NetApp Files, puede completar las siguientes tareas:
+
+* Cree volúmenes NFS y SMB.
+* Gestione pools de capacidad y copias Snapshot de volumen
++
+Cloud Manager permite crear, eliminar y restaurar snapshots de volúmenes. También puede crear nuevos pools de capacidad y especificar sus niveles de servicio.
+
+* Edite un volumen cambiando su tamaño y gestionando las etiquetas.
+
+
+La capacidad de crear y gestionar Azure NetApp Files directamente desde Cloud Manager sustituye la funcionalidad anterior de migración de datos.
+
+
+
+== 5 de abril de 2020
+
+
+
+=== Migración de datos a Azure NetApp Files
+
+Ahora puede migrar datos de NFS o SMB a Azure NetApp Files directamente desde Cloud Manager. El servicio Cloud Sync de NetApp alimenta la sincronización de datos.

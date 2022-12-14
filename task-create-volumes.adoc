@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: task-create-volumes.html 
+keywords: azure netapp files, create volumes, create nfs volumes, netapp account, capacity pool, create capacity pool, mount path, get mount path, find mount path, mount volume 
+summary: Después de configurar el entorno de trabajo, puede crear cuentas de Azure NetApp Files, pools de capacidad y volúmenes. 
+---
+= Cree y monte volúmenes para Azure NetApp Files
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Después de configurar el entorno de trabajo, puede crear cuentas de Azure NetApp Files, pools de capacidad y volúmenes.
+
+
+
+== Cree volúmenes
+
+Es posible crear volúmenes de NFS o SMB en una cuenta de Azure NetApp Files nueva o existente.
+
+Una función de BlueXP denominada "plantillas" permite crear volúmenes optimizados para los requisitos de carga de trabajo de determinadas aplicaciones, como bases de datos o servicios de streaming. Si su organización ha creado plantillas de volumen que debe utilizar, siga <<Crear volúmenes a partir de plantillas,estos pasos>>.
+
+.Antes de empezar
+* Si desea utilizar SMB, debe haber configurado DNS y Active Directory.
+* Cuando planee crear un volumen SMB, debe tener un servidor de Windows Active Directory disponible para el que se pueda conectar. Deberá introducir esta información al crear el volumen.
+
+
+.Pasos
+. Abra el entorno de trabajo de Azure NetApp Files.
+. Haga clic en *Añadir nuevo volumen*.
+. Proporcione la información necesaria en cada página:
++
+** *cuenta de Azure NetApp Files*: Elija una cuenta de Azure NetApp Files existente o cree una nueva cuenta. Al crear una cuenta nueva, también puede elegir el grupo de recursos que desea utilizar.
++
+image:screenshot_anf_create_account.png["Una captura de pantalla de los campos necesarios para crear una cuenta de Azure NetApp Files, que incluye un nombre, una suscripción a Azure, una ubicación y un grupo de recursos"]
+
+** *capacidad Pool*: Seleccione un pool de capacidad existente o cree un nuevo pool de capacidad.
++
+Si crea un pool de capacidad nuevo, debe especificar un tamaño y seleccionar un https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["nivel de servicio"^].
+
++
+El tamaño mínimo del pool de capacidad es de 4 TB. Es posible especificar un tamaño en múltiplos de 4 TB.
+
+** *Detalles y etiquetas*: Introduzca un nombre y un tamaño de volumen, el vnet y la subred donde debería residir el volumen y, opcionalmente, especifique etiquetas para el volumen.
+** *Protocolo*: Elija el protocolo NFS o SMB e introduzca la información necesaria.
++
+A continuación encontrará un ejemplo de detalles de NFS.
+
++
+image:screenshot_anf_nfs.gif["Una captura de pantalla de los campos necesarios para configurar un volumen NFS."]
+
++
+A continuación encontrará un ejemplo de detalles de SMB. Deberá proporcionar información de Active Directory en la siguiente página al configurar el primer volumen de SMB.
+
++
+image:screenshot_anf_smb.gif["Captura de pantalla de los campos necesarios para configurar un volumen SMB."]
+
+
+
+. Si desea que este volumen se cree según una copia de Snapshot de un volumen existente, seleccione la copia de Snapshot en la lista desplegable Snapshot Name.
+. Haga clic en *Añadir volumen*.
+
+
+.Resultado
+El nuevo volumen se agrega al entorno de trabajo.
+
+Continúe con <<Monte los volúmenes,montaje del volumen de cloud>>.
+
+
+
+== Crear volúmenes a partir de plantillas
+
+Si su organización ha creado plantillas de volúmenes de Azure NetApp Files para poder implementar volúmenes optimizados para los requisitos de cargas de trabajo de determinadas aplicaciones, siga los pasos de esta sección.
+
+La plantilla debería facilitar el trabajo porque ciertos parámetros de volumen ya se definirán en la plantilla, como el pool de capacidad, el tamaño, el protocolo, el vnet y la subred donde debería residir el volumen, entre otros. Cuando ya hay un parámetro predefinido, puede saltar al siguiente parámetro de volumen.
+
+.Pasos
+. En la página lienzo, haga clic en el entorno de trabajo Azure NetApp Files en el que desea aprovisionar un volumen.
+. Haga clic en image:screenshot_gallery_options.gif["Botón más"] > *Añadir volumen de plantilla*.
++
+image:screenshot_template_add_vol_anf.png["Captura de pantalla que muestra cómo añadir un volumen nuevo de una plantilla."]
+
+. En la página _Select Template_, seleccione la plantilla que desea utilizar para crear el volumen y haga clic en *Siguiente*.
++
+image:screenshot_select_template_anf.png["Captura de pantalla de las plantillas de aplicación disponibles."]
+
++
+Aparece la página _define Parameters_.
+
++
+image:screenshot_define_anf_vol_from_template.png["Captura de pantalla que muestra una plantilla en blanco que debe rellenar para crear un volumen."]
+
++
+*Nota:* puede hacer clic en la casilla de verificación *Mostrar parámetros de sólo lectura* para mostrar todos los campos bloqueados por la plantilla si desea ver los valores de esos parámetros. De forma predeterminada, estos campos predefinidos están ocultos y sólo se muestran los campos que debe completar.
+
+. Agregue valores para todos los parámetros que no estén codificados de forma rígida desde la plantilla. Consulte <<Creating volumes,crear volúmenes>> Para obtener detalles sobre todos los parámetros que se necesitan completar en la implementación de un volumen de Azure NetApp Files.
+. Haga clic en *Ejecutar plantilla* después de definir todos los parámetros necesarios para este volumen.
+
+
+.Resultado
+BlueXP aprovisiona el volumen y muestra una página para que pueda ver el progreso.
+
+image:screenshot_template_creating_resource_anf.png["Captura de pantalla que muestra el progreso de la creación de un nuevo volumen a partir de la plantilla."]
+
+A continuación, se añade el nuevo volumen al entorno de trabajo.
+
+Continúe con el montaje del volumen de cloud.
+
+
+
+== Monte los volúmenes
+
+Acceda a las instrucciones de montaje desde BlueXP para que pueda montar el volumen en un host.
+
+.Pasos
+. Abra el entorno de trabajo.
+. Pase el ratón sobre el volumen y seleccione *montar el volumen*.
++
+image:screenshot_anf_hover.png["Una captura de pantalla de las operaciones disponibles cuando se pasa el cursor por encima de un volumen."]
+
+. Siga las instrucciones para montar el volumen.
+

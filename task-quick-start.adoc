@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: set up azure netapp files, quick start 
+summary: Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las secciones restantes para obtener todos los detalles. 
+---
+= Inicio rápido de Azure NetApp Files
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Comience rápidamente siguiendo estos pasos o siguiendo los enlaces para obtener información completa.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Configure una aplicación de Azure AD
+[role="quick-margin-para"]
+En Azure, conceda permisos a una aplicación Azure AD y copie el ID de la aplicación (cliente), el ID de directorio (inquilino) y el valor de un secreto de cliente.
+
+[role="quick-margin-para"]
+link:task-set-up-azure-ad.html["Aprenda a configurar una aplicación de Azure AD"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Crear un entorno de trabajo de Azure NetApp Files
+[role="quick-margin-para"]
+En BlueXP, haga clic en *Agregar entorno de trabajo* > *Microsoft Azure* > *Azure NetApp Files* y, a continuación, proporcione detalles sobre la aplicación AD.
+
+[role="quick-margin-para"]
+link:task-create-working-env.html["Aprenda a crear un entorno de trabajo"].
