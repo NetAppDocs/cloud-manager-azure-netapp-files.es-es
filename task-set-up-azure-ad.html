@@ -79,11 +79,17 @@
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/es-es/cloud-manager-azure-netapp-files/js/na-search.js'></script><script src='/es-es/cloud-manager-azure-netapp-files/js/na-pagenav.js'></script><script src='/es-es/cloud-manager-azure-netapp-files/js/na-utility.js'></script>
+ <!--  
+  <link rel='stylesheet' href='/es-es/cloud-manager-azure-netapp-files/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/es-es/cloud-manager-azure-netapp-files/css/prism-netapp.css' type='text/css'>
+ -->
+
+  <!-- <script src='/es-es/cloud-manager-azure-netapp-files/js/na-utility.js'></script> -->
   <script src='/es-es/cloud-manager-azure-netapp-files/js/clouddocs.js'></script>
   <script src='/es-es/cloud-manager-azure-netapp-files/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='/es-es/cloud-manager-azure-netapp-files/js/toc.js'></script>
-  <script src='/es-es/cloud-manager-azure-netapp-files/js/customscripts.js'></script><script>
+  <!-- <script src='/es-es/cloud-manager-azure-netapp-files/js/toc.js'></script> -->
+  <!-- <script src='/es-es/cloud-manager-azure-netapp-files/js/customscripts.js'></script> --><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -148,7 +154,7 @@
   <script src='/es-es/cloud-manager-azure-netapp-files/js/FileSaver.min.js'></script>
   <script src='/es-es/cloud-manager-azure-netapp-files/js/jszip-utils.min.js'></script>
   <script src='/es-es/cloud-manager-azure-netapp-files/js/jszip.min.js'></script>
-  <script src='/es-es/cloud-manager-azure-netapp-files/js/pdf-ux.js'></script>
+  <!-- <script src='/es-es/cloud-manager-azure-netapp-files/js/pdf-ux.js'></script> -->
 </head>
 
 
@@ -221,7 +227,7 @@
           <span class="n-property-bar__menu-toggle-text">Menu</span>
           <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
             <title>bars</title>
-            <use xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#bars"></use>
+            <use xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#bars"></use>
           </svg>
         </a>
       </div>
@@ -230,11 +236,11 @@
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#netapp-mark"></use>
             </svg>
             <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
               <title>netapp-logo</title>
-              <use xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
         </a>
@@ -260,7 +266,7 @@
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#search"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#search"></use>
             </svg>
           </button>
         </div>
@@ -274,7 +280,7 @@
       <span class="lang-name">Español</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#globe"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
@@ -622,7 +628,7 @@
     <div class="ie-nmt-disclaimer-container">
       <div class="ie-nmt-disclaimer-icon">
         <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#circle-info">
+          <use xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#circle-info">
         </svg>
       </div>
       <div class="ie-nmt-disclaimer-content">
@@ -639,7 +645,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 13:58:03 +0000">02/20/2023</time>
+    <time datetime="2023-03-06 15:56:10 +0000">03/06/2023</time>
     
   
 
@@ -867,6 +873,57 @@
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="agregue-las-credenciales-a-bluexp">Agregue las credenciales a BlueXP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Al crear el entorno de trabajo de Azure NetApp Files, se le pedirá que seleccione las credenciales asociadas al principal del servicio. Debe añadir estas credenciales a BlueXP antes de crear el entorno de trabajo.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Pasos</div>
+<ol class="arabic">
+<li>
+<p>En la parte superior derecha de la consola de BlueXP, haga clic en el icono Configuración y seleccione <strong>credenciales</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_settings_icon.gif" alt="Captura de pantalla que muestra el icono Configuración en la parte superior derecha de la consola BlueXP."></span></p>
+</div>
+</li>
+<li>
+<p>Haga clic en <strong>Agregar credenciales</strong> y siga los pasos del asistente.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Ubicación de credenciales</strong>: Seleccione <strong>Microsoft Azure &gt; BlueXP</strong>.</p>
+</li>
+<li>
+<p><strong>Definir credenciales</strong>: Introduzca información acerca del principal de servicio de Azure Active Directory que otorga los permisos necesarios:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Secreto de cliente</p>
+</li>
+<li>
+<p>ID de aplicación (cliente)</p>
+</li>
+<li>
+<p>ID de directorio (inquilino)</p>
+<div class="paragraph">
+<p>Debería haber capturado esta información cuando usted <a href="#cree-la-aplicación-ad">Se creó la aplicación AD</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Revisión</strong>: Confirme los detalles acerca de las nuevas credenciales y haga clic en <strong>Agregar</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->
@@ -917,7 +974,7 @@
                 <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                   <title>blog@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#blog"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#blog"></use>
                 </svg>
               </a>
             </li>
@@ -928,7 +985,7 @@
                 <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
                   <title>community@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#comments"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#comments"></use>
                 </svg>
               </a>
             </li>
@@ -939,7 +996,7 @@
                 <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                   <title>twitter@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#twitter"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#twitter"></use>
                 </svg>
               </a>
             </li>
@@ -950,7 +1007,7 @@
                 <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
                   <title>facebook@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#facebook"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#facebook"></use>
                 </svg>
               </a>
             </li>
@@ -961,7 +1018,7 @@
                 <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
                   <title>linkedin@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#linkedin"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#linkedin"></use>
                 </svg>
               </a>
             </li>
@@ -972,7 +1029,7 @@
                 <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                   <title>youtube@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#youtube"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#youtube"></use>
                 </svg>
               </a>
             </li>
@@ -983,7 +1040,7 @@
                 <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
                   <title>slideshare@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/cloud-manager-azure-netapp-files/common/svg/sprite.svg#slideshare"></use>
+                    xlink:href="/es-es/cloud-manager-azure-netapp-files/images/sprite.svg#slideshare"></use>
                 </svg>
               </a>
             </li>
@@ -1007,7 +1064,6 @@
       cookieLaw.euCountry = "US";
       cookieLaw.invoke = function(){return false;}
     </script>
-    <script src='/es-es/cloud-manager-azure-netapp-files/js/www-ntap.js'></script>
     <script src='/es-es/cloud-manager-azure-netapp-files/js/tabbed-blocks.js'></script>
     <script src='/es-es/cloud-manager-azure-netapp-files/js/sidebar.js'></script>
   </body></html>
