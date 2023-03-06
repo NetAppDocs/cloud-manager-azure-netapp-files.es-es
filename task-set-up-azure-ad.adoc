@@ -134,3 +134,32 @@ El principal de servicio de BlueXP ahora tiene los permisos de Azure necesarios 
 
 
 
+
+
+
+== Agregue las credenciales a BlueXP
+
+Al crear el entorno de trabajo de Azure NetApp Files, se le pedirá que seleccione las credenciales asociadas al principal del servicio. Debe añadir estas credenciales a BlueXP antes de crear el entorno de trabajo.
+
+.Pasos
+. En la parte superior derecha de la consola de BlueXP, haga clic en el icono Configuración y seleccione *credenciales*.
++
+image:screenshot_settings_icon.gif["Captura de pantalla que muestra el icono Configuración en la parte superior derecha de la consola BlueXP."]
+
+. Haga clic en *Agregar credenciales* y siga los pasos del asistente.
++
+.. *Ubicación de credenciales*: Seleccione *Microsoft Azure > BlueXP*.
+.. *Definir credenciales*: Introduzca información acerca del principal de servicio de Azure Active Directory que otorga los permisos necesarios:
++
+*** Secreto de cliente
+*** ID de aplicación (cliente)
+*** ID de directorio (inquilino)
++
+Debería haber capturado esta información cuando usted <<Cree la aplicación AD,Se creó la aplicación AD>>.
+
+
+
+.. *Revisión*: Confirme los detalles acerca de las nuevas credenciales y haga clic en *Agregar*.
+
+
+
